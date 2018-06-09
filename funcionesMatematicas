@@ -12,9 +12,16 @@
 			if(document.getElementById("ValorDividendo").value !=""){
 				dividendo = document.getElementById("ValorDividendo").value;
 			}
+			else{
+				alert("Favor de capturar una cantidad para el Dividendo");
+			}
 			if(document.getElementById("ValorDivisor").value !=""){
 				divisor = document.getElementById("ValorDivisor").value;
 			}
+			else{
+				alert("Favor de capturar una cantidad para el Divisor");
+			}
+			return;
 			
 			mod(dividendo, divisor)
 		
