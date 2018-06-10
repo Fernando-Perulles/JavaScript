@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Calcular el M&oacute;dulo</title>
+	
+	<script>
+	
+		function validarInput() {
+			var dividendo = document.getElementById("ValorDividendo").value;
+			var divisor = document.getElementById("ValorDivisor").value;
+			var cantidad;
+			
+			if (dividendo != "") {
+				cantidad = dividendo;
+				validaFloat(cantidad);
+				if (divisor != "") {
+					cantidad = divisor;
+					validaFloat(cantidad);
+					mod(dividendo, divisor);
+				} else {	//alert("entra al else de Divisor");
+					if (divisor === "") {
+						alert("Favor de capturar una cantidad para el Divisor");
+					}
+				}
+			} else { //alert("entra al else de Dividendo");
+				if (dividendo === "") {
+					alert("Favor de capturar una cantidad para el Dividendo");
+				}
+			}
+		}
+	
+		function mod(dividendo , divisor) { // Función modulo, regresa el residuo de una división
+		
+			resDiv = dividendo / divisor;
+			parteEnt = Math.floor(resDiv);	// Obtiene la parte Entera de resDiv 
+			parteFrac = resDiv - parteEnt;	// Obtiene la parte Fraccionaria de la división
+			modulo = Math.round(parteFrac * divisor);	// Regresa la parte fraccionaria * la división (modulo) 
+			
+			//alert(modulo);
+			document.getElementById("Modulo").innerHTML = modulo;
+			return modulo; 
+		}
+		
+		function validaFloat(cantidad) {
+			var v_bool_valida = false;
+			
+			if (!/^([0-9])*[.]?[0-9]*$/.test(cantidad)) {
+				alert("El valor " + cantidad + " no es un número");
+				limpiarDatos();
+			} else {
+				v_bool_valida = true;
+			}
+			//return v_bool_valida;
+		}		
+		
+		function limpiarDatos() {
+			location.reload(1);
+		}
+		
+	</script>
+</head>
+
+<body>
+	<h1>Funci&oacute;n para obtener M&oacute;dulo</h1>
+	
+	<table >
+		<tr>
+			<td>Ingresar Dividendo</td>
+			<td><input name="InpDividendo" type="text" id="ValorDividendo"></td>
+		</tr>
+		<tr>
+			<td>Ingresar Divisor</td>
+			<td><input name="InpDivisor" type="text" id="ValorDivisor"></td>
+		</tr>
+		<tr>
+			<td>Total</td>
+			<td id="Modulo"></td>
+		</tr>
+		<tr>
+			<td><button onclick="validarInput()">Calcular Modulo</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="limpiarDatos()">Reiniciar</button></td>
+		</tr>
+	</table>
+
+	
+</body>
+
+</html>
