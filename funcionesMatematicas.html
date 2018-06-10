@@ -13,18 +13,20 @@
 				dividendo = document.getElementById("ValorDividendo").value;
 			}
 			else{
+				limpiarDatos();
 				alert("Favor de capturar una cantidad para el Dividendo");
 			}
 			if(document.getElementById("ValorDivisor").value !=""){
 				divisor = document.getElementById("ValorDivisor").value;
 			}
 			else{
+				limpiarDatos();
 				alert("Favor de capturar una cantidad para el Divisor");
 			}
-			return;
+						
+			mod(dividendo, divisor);
 			
-			mod(dividendo, divisor)
-		
+			return;
 		}
 	
 		function mod(dividendo , divisor) { // Función modulo, regresa el residuo de una división
@@ -38,7 +40,10 @@
 			return modulo; 
 		}
 		
-		
+		function limpiarDatos() {
+			document.getElementById("ValorDividendo").value = "";
+			document.getElementById("ValorDivisor").value = "";
+		}	
 
 	</script>
 </head>
