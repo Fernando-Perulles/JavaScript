@@ -14,11 +14,14 @@
 			
 			if (dividendo != "") {
 				cantidad = dividendo;
-				validaFloat(cantidad);
+				validarNumeros(cantidad);
+				
 				if (divisor != "") {
 					cantidad = divisor;
-					validaFloat(cantidad);
+					validarNumeros(cantidad);
+					
 					mod(dividendo, divisor);
+					
 				} else {	//alert("entra al else de Divisor");
 					if (divisor === "") {
 						alert("Favor de capturar una cantidad para el Divisor");
@@ -43,16 +46,15 @@
 			return modulo; 
 		}
 		
-		function validaFloat(cantidad) {
-			var v_bool_valida = false;
+		function validarNumeros(cantidad) {
+			var validaNumero = false;
 			
 			if (!/^([0-9])*[.]?[0-9]*$/.test(cantidad)) {
-				alert("El valor " + cantidad + " no es un número");
+				alert("El valor " + cantidad + " es incorrecto, favor de capturar solo números");
 				limpiarDatos();
 			} else {
-				v_bool_valida = true;
+				validaNumero = true;
 			}
-			//return v_bool_valida;
 		}		
 		
 		function limpiarDatos() {
