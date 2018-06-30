@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Convertir Cantidad Numerica a Letras</title>
+
+    <script src="Scripts/scripts.js"></script>
+</head>
+
+<body onload="limpiarDatos()">
+    <h1>Cupture una cantidad</h1>
+
+    <table border="0">
+        <tr>
+            <td>Capture una Cantidad</td>
+            <td><input type="text" name="CantidadUsuario" id="CtdCapturada"></td>
+            <td><input type="button" name="AccValidar" value="Validar" onclick="main()"></td>
+            <td><input type="button" name="AccLimpiar" value="Limpiar" onclick="limpiarDatos()"></td>
+        </tr>
+        <tr>
+            <td>La cantidad es:</td>
+            <td id="cantidadLetra">.</td>
+        </tr>
+    </table>
+    
+</body>
+</html>
