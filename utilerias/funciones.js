@@ -26,4 +26,39 @@ V-1947
 O-1947
 + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - +
 
+function obtenerNombrePagina() {    // Función para obtenr el nombre de la página, se eliminam la ruta y la extensión. 
+
+    let pathCompleto = window.location.pathname;
+    let nombrePagina = pathCompleto.split("/").pop();
+
+        nombrePagina = nombrePagina.substring(0, nombrePagina.length - 5);
+    
+    return nombrePagina;
+
+}
++ - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - +
             
+function generarNumeroAleatorio() { // Funcion para generar un numero aleatorio de 6 posiciones.
+	
+    let numSolicitud = document.getElementById('numeroSolicitud');
+    
+    numSolicitud.value = (numSolicitud.innerHTML = Math.floor((Math.random() * 1000000 + 1)));
+    
+    window.sessionStorage.setItem("NumeroSolicitud", numSolicitud.innerHTML);
+   
+}
++ - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - + + - +
+            
+function pausarEnvioForma() { // Fucnión para pausar el envío de la solicitud, permite mostrar un mensaje en pantalla previo al envio.
+    
+    guardarValores();
+    
+    document.getElementById('msjSolicitudEnviada').style.display = 'block';
+    
+    setTimeout(function() {
+
+        direccionamientoPaginasAplicacion();
+
+    }, 5000);
+    
+}
